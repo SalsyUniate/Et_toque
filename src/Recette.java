@@ -3,10 +3,8 @@ public class Recette extends Posts{
 
     public Annonce(String titre, String corps, bool statut, int note){
         super(titre, corps, statut);
-        this.note = note
+        this.note = note;
     }
-
-
 
 	public void Noter(int n){
         this.note = n;

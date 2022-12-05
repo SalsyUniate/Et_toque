@@ -1,19 +1,19 @@
 public class Posts {
     public String titre;
     public String corps;
-    public bool statut = 0;
+    public Boolean statut = false;
 
-    public Posts(String titre, String corps, bool statut) {
+    public Posts(String titre, String corps, Boolean statut) {
 		this.titre = titre;
         this.corps = corps;
         this.statut = statut;
 	}
 	
 	public void Valider(){
-        this.statut = 1;
+        this.statut = true;
     }
 
-    public titre getTitre(){
+    public String getTitre(){
         return this.titre;
     }
 

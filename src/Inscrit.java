@@ -4,7 +4,7 @@ public class Inscrit {
 	public String pseudo;
 	public String mdp;
 	public String contact;
-	public ArrayList<Post> post;
+	public ArrayList<Posts> post;
 	public boolean statusConnexion = false;
 	
 	public Inscrit() {
@@ -20,13 +20,13 @@ public class Inscrit {
 		statusConnexion=false;
 	}
 
-	void depot(Post post, ArrayList<Post> liste){
+	void depot(Posts post, ArrayList<Posts> liste){
 		liste.add(post);
 		
 	}
-	void supprimer(Post post, ArrayList<Post> liste){
+	void supprimer(Posts post, ArrayList<Posts> liste){
 		for(int i=0 ; i<liste.size(); i++){
-			if(liste.get(i).getTitre() == post.getTitre){
+			if(liste.get(i).getTitre() == post.getTitre()){
 				liste.remove(i);
 				break;
 			}
@@ -39,7 +39,7 @@ public class Inscrit {
 		this.contact=newcontact;
 
 	}
-	void consulter(Post post){
-		System.out.println(this.getpost());
+	void consulter(Posts post){
+		System.out.println(this.getPost());
 	}
 }
