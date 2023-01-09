@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Gestionnaire{
 
     public Gestionnaire(){
@@ -24,4 +22,7 @@ public class Gestionnaire{
         abonnement.abonnes.add(fan);
     }
 
+    public static void supprimerAbonne(Inscrit plusFan, Inscrit abonnement){
+        abonnement.abonnes.remove(plusFan);
+    }
 }

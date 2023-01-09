@@ -9,15 +9,23 @@ public class Inscrit {
 	public ArrayList<Inscrit> abonnes;
 	public ArrayList<String> notifications;
 	
-	public Inscrit() {
+	public Inscrit(String pseudo, String mdp, String contact, ArrayList<Posts> posts, boolean statusConnexion, ArrayList<Inscrit> abonnes, ArrayList<String> notifications) {
 		// TODO Auto-generated constructor stub
+		this.pseudo = pseudo;
+		this.mdp = mdp;
+		this.contact = contact;
+		this.posts = posts;
+		this.statusConnexion = statusConnexion;
+		this.abonnes = abonnes;
+		this.notifications = notifications;
 	}
+
 	void connexion(String pseudonyme, String motdepasse){
 		if((pseudonyme == this.pseudo) && (motdepasse==this.mdp)){
 			statusConnexion=true;
-		}
-		
+		}	
 	}
+	
 	void deconnexion(){
 		statusConnexion=false;
 	}
@@ -25,7 +33,7 @@ public class Inscrit {
 	String getPseudo(){
 		return this.pseudo;
 	}
-	
+
 	void soumettrePost(Posts post){
 		Gestionnaire.ajouterPost(this, post);
 	}
