@@ -1,25 +1,27 @@
 import java.util.ArrayList;
 
 public class Gestionnaire{
-    private ArrayList<Posts> Posts;
 
-    public Gestionnaire(ArrayList<Posts> Posts){
-        this.Posts = Posts;
+    public Gestionnaire(){
     }
 
-    public void ajouterPost(Posts post){
-        Posts.add(post);
+    public static void ajouterPost(Inscrit inscrit, Posts post){
+        inscrit.posts.add(post);
+        notifierAbonnes(inscrit, post);
     }
 
-    public void supprimerPost(Posts post){
-        Posts.remove(post);
+    public static void notifierAbonnes(Inscrit inscrit, Posts post){
+        for (int i = 0; i < inscrit.abonnes.size(); i++){
+            inscrit.abonnes.get(i).notifications.add(inscrit.getPseudo()+" vient de poster " + post.getTitre() + "!");
+        }
     }
 
-    public void ajouterAbonne(Inscrit abonne, Inscrit abonnement){
-        abonnement.abonnes.add(abonne);
+    public static void supprimerPost(Inscrit inscrit, Posts post){
+        inscrit.posts.remove(post);
     }
 
-    public void supprimerAbonne(Inscrit abonne, Inscrit abonnement){
-        abonnement.abonnes.remove(abonne);
+    public static void ajouterAbonne(Inscrit fan, Inscrit abonnement){
+        abonnement.abonnes.add(fan);
     }
+
 }

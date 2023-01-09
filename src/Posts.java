@@ -17,6 +17,8 @@ public class Posts {
         return this.titre;
     }
 
-    public String getPost();
+    public String getPost(){
+        return this.corps;
+    }
     
 }
