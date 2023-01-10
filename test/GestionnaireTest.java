@@ -1,4 +1,3 @@
-import java.beans.Transient;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
